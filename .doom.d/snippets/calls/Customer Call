@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: Customer Call
+# key: cc
+# --
+Outbound Call:
+
+Reason for Call:
+Rang through, left voicemessage.
+Rang through, voicemail not available.
+
+Next Action:
+Contact LCON cell
+Contact alt LCON
+Contact alt LCON cell

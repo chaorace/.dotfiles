@@ -1,0 +1,32 @@
+#+BEGIN_SIGNATURE
+#+BEGIN_EXPORT html
+<!--
+         _,.-------.,_
+    ,;~'             '~;,
+   ,;                     ;,
+   ;                         ;
+  ,'                         ',
+  ,;                           ;,
+; ;      .           .      ; ;
+| ;   ______       ______   ; |
+|  `/~"     ~" . "~     "~\'  |
+|  ~  ,-~~~^~, | ,~^~~~-,  ~  |
+ |   |        }:{        |   |
+  |   l       / | \       !   |
+ .~  (__,.--" .^. "--.,__)  ~.
+  |     ---;' / | \ `;---     |
+  \__.       \/^\/       .__/
+   V| \                 / |V
+   | |T~\___!___!___/~T| |
+   | |`IIII_I_I_I_IIII'| |
+   |  \,III I I I III,/  |
+    \   `~~~~~~~~~~'    /
+     \   .       .   /
+        \.    ^    ./
+          ^~~~^~~~^
+
+I'm secretly a Tier ∞ NOC Analyst
+-->
+<style><!-- /* Font Definitions */ @font-face {font-family:"Cambria Math"; panose-1:2 4 5 3 5 4 6 3 2 4;} @font-face {font-family:Calibri; panose-1:2 15 5 2 2 2 4 3 2 4;} /* Style Definitions */ p.MsoNormal, li.MsoNormal, div.MsoNormal {margin:0in; margin-bottom:.0001pt; font-size:11.0pt; font-family:"Calibri",sans-serif;} a:link, span.MsoHyperlink {mso-style-priority:99; color:#0563C1; text-decoration:underline;} a:visited, span.MsoHyperlinkFollowed {mso-style-priority:99; color:#954F72; text-decoration:underline;} span.EmailStyle17 {mso-style-type:personal-compose; font-family:"Calibri",sans-serif;} .MsoChpDefault {mso-style-type:export-only; font-family:"Calibri",sans-serif;} @page WordSection1 {size:8.5in 11.0in; margin:1.0in 1.0in 1.0in 1.0in;} div.WordSection1 {page:WordSection1;} --></style><div class=WordSection1><p class=MsoNormal><b><span style='font-size:10.0pt'>Christopher Crockett<o:p></o:p></span></b></p><p class=MsoNormal><span style='font-size:10.0pt'>NOC Analyst I &#8211; Primary Services<o:p></o:p></span></p><p class=MsoNormal><span style='font-size:10.0pt'>Office: 844-992-3266<o:p></o:p></span></p><p class=MsoNormal><u><span style='font-size:10.0pt;color:#0563C1'><a href="mailto:ccrockett@adcomsolutions.com"><span style='color:#0563C1'>ccrockett@adcomsolutions.com</span></a></span></u><u><span style='color:#0563C1'><o:p></o:p></span></u></p><p class=MsoNormal><span style='font-size:10.0pt'>Norcross Headquarters</span><o:p></o:p></p><p class=MsoNormal><a href="http://www.adcomsolutions.com/"><span style='color:black;text-decoration:none'><img border=0 width=64 height=26 style='width:.6666in;height:.2708in' id="Picture_x0020_1" src="~/.doom.d/mail/sig1.png" alt="Adcom Solutions"></span></a>&nbsp; <a href="http://www.creativetechnologypartners.net/"><span style='color:black;text-decoration:none'><img border=0 width=75 height=21 style='width:.7812in;height:.2187in' id="Picture_x0020_2" src="~/.doom.d/mail/sig2.png" alt="Creative Technology Partners"></span></a>&nbsp;<o:p></o:p></p><p class=MsoNormal><o:p>&nbsp;</o:p></p></div>
+#+END_EXPORT
+#+END_SIGNATURE
