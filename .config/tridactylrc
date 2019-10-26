@@ -1,0 +1,80 @@
+sanitise tridactyllocal tridactylsync
+
+" Appearance
+set theme dark
+guiset_quiet gui none
+guiset_quiet statuspanel none
+set modeindicator false
+set smoothscroll true
+" Preferences
+set editorcmd emacs
+set yankto both
+set putfrom both
+set allowautofocus false
+setpref browser.autofocus false
+"" Firefox Preferences
+""" Fixamo
+setpref privacy.resistFingerprinting.block_mozAddonManager true
+setpref extensions.webextensions.restrictedDomains ""
+""" Bust CSP entirely since Mozilla forced Tridactyl to not touch it
+setpref security.csp.enable false
+""" No pocket
+setpref extensions.pocket.enabled false
+""" Block animations
+setpref toolkit.cosmeticAnimations.enabled false
+setpref full-screen-api.transition-duration.enter 0
+setpref full-screen-api.transition-duration.leave 0
+""" Rendering
+layout.css.devPixelsPerPx 0.9
+""" Convenience
+setpref layout.word_select.eat_space_to_next_word false
+
+" Page-Specific Binds
+"" Reddit/HN
+bindurl reddit.com gu urlparent 4
+bind ;c hint -c [class*="expand"],[class="togg"]
+"" Only hint search results on Google
+bindurl www.google.com/search? f hint -Jc .rc > .r > a
+bindurl www.google.com/search? F hint -Jbc .rc>.r>a
+
+
+" Bindings
+"" Page Navigation
+bind gh followpage prev
+bind gl followpage next
+bind x tabclose
+bind X undo
+bind u scrollline -50
+bind d scrollline 50
+""TST makes more sense this way
+bind J tabnext
+bind K tabprev
+"" Allow selection binds in the commandline
+unbind --mode=ex <C-a>
+unbind --mode=ex <C-c>
+
+"" Find Mode
+bind / fillcmdline find
+bind ? fillcmdline find -?
+bind n findnext 1
+bind N findnext -1
+bind ,<Space> nohlsearch
+
+" URL redirects
+" No new Reddit
+autocmd DocStart ^http(s?)://www.reddit.com js tri.excmds.urlmodify("-t", "www", "old")
+
+" Complex Stuff
+""Hacky Hints
+set hintfiltermode vimperator-reflow
+command vimpon set hintnames numeric
+command vimpoff set hintnames short
+"Pick from commonly interactable elements
+bind q composite vimpoff | hint -c input, button, a
+"Stricter element pick
+bind Q composite vimpoff | hint -c :empty:not(tr):not(td):not(span):not(br):not(textarea):not(path)
+"Pick from text inputs
+bind i composite vimpoff | hint -c textarea
+"Switch to vimperator hints for picking wordy elements
+bind f composite vimpon | hint -f
+bind F composite vimpon | hint -F

@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 #Install packages, assumes Arch environment
-sudo pacman -S --needed emacs open-dyslexic-fonts
+yay -S --needed --noconfirm emacs open-dyslexic-fonts firefox firefox-tridactyl-native shadowfox-updater firefox-tridactyl-git
 
 #Load Doom Emacs package
 git clone -b develop https://github.com/hlissner/doom-emacs $HOME/.emacs.d
@@ -9,3 +9,10 @@ $HOME/.emacs.d/bin/doom refresh
 
 #Recache Fonts
 fc-cache
+
+#Run shadowfox updater
+shadowfox-updater -generate-uuids -set-dark-theme
+
+#Cycle firefox once (applies GUI changes from tridactyl)
+firefox &
+sleep 10 && killall firefox
