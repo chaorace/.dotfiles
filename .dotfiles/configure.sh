@@ -3,6 +3,11 @@
 #Install packages, assumes Arch environment
 yay -S --needed --noconfirm emacs open-dyslexic-fonts firefox firefox-tridactyl-native shadowfox-updater firefox-tridactyl-git
 
+#Enable and run mbsync service
+systemctl --user enable mbsync.service
+systemctl --user enable mbsync.timer
+systemctl --user start mbsync.timer
+
 #Load Doom Emacs package
 git clone -b develop https://github.com/hlissner/doom-emacs $HOME/.emacs.d
 $HOME/.emacs.d/bin/doom refresh
