@@ -1,0 +1,5 @@
+# This is the default filter chain
+[ArchiveSentMailsFilter]
+[FolderNameFilter]
+[KillThreadsFilter]
+[InboxFilter]
