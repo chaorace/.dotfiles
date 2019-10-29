@@ -1,0 +1,46 @@
+IMAPAccount work
+# Address to connect to
+Host outlook.office365.com
+User ccrockett@adcomsolutions.com
+Timeout 0
+PassCmd +"lpass show --password microsoftonline.com"
+# Use SSL
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore work-remote
+Account work
+
+# LOCAL STORAGE
+MaildirStore work-local
+# The trailing "/" is important
+Path ~/.mail/work/
+Inbox ~/.mail/work/Inbox
+# Save imap subfolders on disk with subfolders
+SubFolders Verbatim
+### Automatically create missing mailboxes, both locally and on the server
+
+Channel work-tickets
+MaxMessages 30000
+Master :work-remote:Inbox/Internal/TicketMail
+Slave :work-local:Inbox/Internal/TicketMail
+Create Both
+Expunge Both
+SyncState *
+
+Channel work-inbox
+MaxMessages 30000
+Master :work-remote:Inbox/
+Slave :work-local:Inbox/
+Create Both
+Expunge Both
+SyncState *
+
+Channel work
+MaxMessages 1000
+Master :work-remote:
+Slave :work-local:
+Create Both
+Expunge Both
+Patterns * !INBOX/Internal/TicketMail !INBOX
+SyncState *
