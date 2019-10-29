@@ -95,11 +95,11 @@
 
         ;; no need to ask
         mu4e-confirm-quit nil
-        ;; remove 'lists' column
-        mu4e-headers-fields
-        '((:human-date . 12)
-          (:from . 25)
-          (:subject)))
+        ;; Make the email fields more outlook-like while viewing
+        mu4e-view-fill-headers nil
+        mu4e-view-fields
+        '(:from :date :to  :cc :subject))
+
   (when (featurep! :tools flyspell)
     (add-hook 'mu4e-compose-mode-hook #'flyspell-mode))
 
@@ -132,7 +132,12 @@
 (def-package! org-msg
   :after htmlize
   :load-path "/home/chao/.emacs.d/.local/straight/build/org-msg"
-  :config (org-msg-mode))
+  :config
+  (org-msg-mode)
+  (add-hook 'org-msg-edit-mode-hook (defun cc-add-cc() (save-excursion
+                                                         (message-add-header "Cc: Network Operations <noc@adcomsolutions.com>\n"))))
+  (map! :map org-msg-edit-mode-map
+        :n "G" #'org-msg-goto-body))
 
 (setq ssh-directory-tracking-mode nil)
 (load! "packages/ssh.el")
