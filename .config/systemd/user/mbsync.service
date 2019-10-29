@@ -3,5 +3,7 @@ Description=Mailbox synchronization service
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/mbsync -Va || true
-ExecStartPost=/usr/bin/emacsclient -e '(lambda!! (notmuch-poll) (mu4e-update-index))'
+ExecStartPre=-/usr/bin/mbsync -a
+ExecStart=/usr/bin/fdm fetch
+ExecStartPost=/usr/bin/emacsclient -e '(notmuch-poll)'
+ExecStartPost=/usr/bin/emacsclient -e '(mu4e-update-index)'

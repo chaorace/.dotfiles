@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 #Install packages, assumes Arch environment
-yay -S --needed --noconfirm emacs open-dyslexic-fonts firefox firefox-tridactyl-native shadowfox-updater firefox-tridactyl-git
+yay -S --needed --noconfirm emacs open-dyslexic-fonts firefox firefox-tridactyl-native shadowfox-updater firefox-tridactyl-git isync fdm notmuch afew mu
 
 #Enable and run mbsync service
 systemctl --user enable mbsync.service
