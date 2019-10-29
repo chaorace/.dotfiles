@@ -165,19 +165,23 @@
 (def-package! notmuch
   :commands notmuch-poll)
 
+(defun cc-kill-thread() (interactive)(notmuch-tree-tag-thread (list "+killed")))
+(defun cc-unkill-thread() (interactive)(notmuch-tree-tag-thread (list "-killed")))
+
 (after! notmuch
   (setq notmuch-saved-searches
-        '((:name "inbox"   :query "tag:work/Inbox not tag:trash" :key "i")
+        '((:name "inbox"   :query "tag:work/Inbox not tag:trash not tag:killed" :key "i")
           (:name "sent"    :query "tag:\"work/Sent Items\""                :key "s")
           (:name "flagged" :query "tag:flagged"             :key "f")
-          (:name "me"      :query "tag:work/Inbox/Me"       :key "m")
-          (:name "related" :query "tag:work/Inbox/Me/Related" :key "r")
+          (:name "me"      :query "tag:work/Inbox/Me not tag:trash not tag:killed"       :key "m")
+          (:name "related" :query "tag:work/Inbox/Me/Related not tag:trash not tag:killed" :key "r")
           (:name "drafts"  :query "tag:draft"               :key "d")))
   (add-hook 'notmuch-search-hook 'searchtotree)
   (setq notmuch-mua-user-agent-function 'mu4e-user-agent)
   (setq mail-user-agent 'mu4e-user-agent)
   (setq notmuch-tree-show-out 't)
   (map! :map notmuch-tree-mode-map
+        :nv "DEL" #'cc-kill-thread
         :nv "c" nil
         :nv "c" #'mu4e-compose-new)
   (defun notmuch-tree-show-message-out()
