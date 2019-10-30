@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: Change Request
+# key: chr           
+# --
+`(replace-regexp "^To:.*" "To: NOC Team Leads <NOCTeamLeads@adcomsolutions.com>")
+(replace-regexp "^Cc:.*" "Cc: Network Operations <noc@adcomsolutions.com>")
+(replace-regexp "^Subject:.*" (format "Subject: Change Request Needed: %s" (yas-field-value 0)))`
+The following information has changed, please update the site record to reflect this change:
+#+BEGIN_QUOTE
+$1
+#+END_QUOTE

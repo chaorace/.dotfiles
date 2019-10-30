@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# name: Big Lots NIC
+# key: nic                                                                                                     
+# --
+`(save-excursion
+    (goto-char 0)
+    (replace-regexp "^To:.*" "To: \"Young, Brian\" <brianyoung@biglots.com>, BLNIC <BLNIC@biglots.com>")
+    (replace-regexp "^Cc:.*" "Cc: ITServiceCenter <itservicecenter@biglots.com>, Network Operations <noc@adcomsolutions.com>"))`
+We are reaching out regarding ongoing issues affecting the ${1:$$(yas-choose-value '("AT&T" "Verizon" "Sprint"))} Cradlepoint at site $2.
+
+After working with $1, it was determined that $0
+
+At this point, it may be advisable to consider installing an external antenna or switching to a different carrier.
+We will be holding our ticket open while awaiting your response.
+
+Adcom Ticket#: $3 ${3:$$(save-excursion
+    (goto-char 0)
+    (replace-regexp "^Subject:.*" (format "Subject: %s-%s-Big Lots Store Inc" yas-text (yas-field-value 2))))}

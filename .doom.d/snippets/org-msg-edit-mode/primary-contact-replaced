@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Primary Contact Replaced
+# key: cont
+# --
+Primary Contact (Replaced)\\\\
+Phone: $1\\\\
+Name: $0

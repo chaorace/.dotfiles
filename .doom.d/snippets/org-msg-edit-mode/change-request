@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: Change Request
+# key: cr                                                                                          
+# --
+`(save-excursion
+    (goto-char 0)
+    (replace-regexp "^To:.*" "To: NOC Team Leads <NOCTeamLeads@adcomsolutions.com>")
+    (replace-regexp "^Cc:.*" "Cc: Network Operations <noc@adcomsolutions.com>")
+    (replace-regexp "^Subject:.*" (format "Subject: Change Request Needed: %s" (read-string "Subject: "))))`
+The following information has changed, please update the site record to reflect this change:
+#+BEGIN_QUOTE
+$0
+#+END_QUOTE

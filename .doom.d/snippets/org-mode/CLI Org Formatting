@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: CLI Org Formatting
+# key: cli
+# --
+#+BEGIN_SRC :results value raw
+$0
+#+END_SRC
