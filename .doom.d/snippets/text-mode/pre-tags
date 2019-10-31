@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Pre Tags
+# key: pre
+# --
+<pre>
+$0
+</pre>

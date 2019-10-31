@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: Outbound Call
+# key: cout
+# --
+--Outbound Call
+--Phone Number: $1
+--Speaking With: $2
+
+--Reason for Call:
+Speaking with $2.
+
+$3
+
+--Next Steps:
+$4

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Shopping list update
+# key: shop
+# --
+Shopping: $1
+
+${2:$$(yas-choose-value '("Added " "Finished " "Removed " "Sorted Inbox" "Reorganized "))}
