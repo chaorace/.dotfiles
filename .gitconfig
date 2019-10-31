@@ -1,0 +1,7 @@
+[user]
+	name = chaorace@gmail.com
+	email = chaorace@gmail.com
+[core]
+	editor = emacsclient -a=\\\"\\\"
+[credential]
+	helper = store
