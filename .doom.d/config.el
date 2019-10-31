@@ -189,3 +189,10 @@
     (mu4e~proc-view(car (last (split-string
                                (notmuch-show-get-message-id)
                                ":"))) 't 'f)))
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/org/todo.org" "Inbox")
+         "* TODO %?\n  %i\n  %a")
+        ("s" "Shopping" entry (file+headline "~/org/shopping.org" "Inbox")
+         "* TODO %?\n  %i\n  %a")
+        ("j" "Journal" entry (file+datetree "~/org/journal.org")
+         "* %?\nEntered on %U\n  %i\n  %a")))
