@@ -91,16 +91,16 @@
         (cond ((featurep! :completion ivy) #'ivy-completing-read)
               ((featurep! :completion helm) #'completing-read)
               (t #'ido-completing-read))
-        (setq mu4e-compose-complete-ignore-address-regexp
-              "\\(no-?reply\\|adcom$\\|adcomolu\\|adcsolu\\|adcomso$\\|adcomsolutions.co$\\|adcomsoulutions\\|adcomsolutons\\)")
 
         ;; no need to ask
         mu4e-confirm-quit nil
         ;; Make the email fields more outlook-like while viewing
         mu4e-view-fill-headers nil
-        mu4e-view-fields
-        '(:from :date :to  :cc :subject))
+        mu4e-view-fields '(:from :date :to  :cc :subject)
+        )
 
+        (setq mu4e-compose-complete-ignore-address-regexp
+              "\\(no-?reply\\|adcom$\\|adcomolu\\|adcsolu\\|adcomso$\\|adcomsolutions.co$\\|adcomsoulutions\\|adcomsolutons\\)")
   (when (featurep! :tools flyspell)
     (add-hook 'mu4e-compose-mode-hook #'flyspell-mode))
 
