@@ -1,0 +1,51 @@
+# make sxhkd reload its configuration files:
+ctrl + Escape
+	pkill -USR1 -x sxhkd
+
+super + {_, shift + }{h,j,k,l}
+	bspc node {-f,-s} {west,south,north,east}
+
+super + {_, shift + }{1-9}
+	bspc {desktop -f,node --to-desktop} {I,II,III,IV,V,VI,VII,IIX,IX,X} --follow
+
+super + alt + {h, j, k, l}
+	~/.bin/bspwm/bspwm_resize.sh {west,south,north,east} 20
+
+super + s
+	bspc node -g sticky
+
+super + f
+	bspc node -t ~floating
+
+super + m
+	bspc node -t ~fullscreen
+
+super + {_, shift + } t
+	bspc node -t {~tiled,~pseudo_tiled}
+
+super + {_, shift +} x
+	bspc node {--close, --kill}
+
+super + d
+	rofi -show
+
+super + Return
+	termite
+
+super + semicolon
+	emacsclient -c -n -e '(switch-to-buffer nil)'
+
+super + space
+	~/.bin/bspwm/floatmacs.sh
+
+ctrl + alt + Delete
+	screenlock
+
+ctrl + grave; s
+	sleep 0.2; scrot -s -f ~/screenshots/$(date +%s).png
+
+ctrl + grave; v
+	clipster -o -n 0 -0 | rofi -i -dmenu -sep '\x00' -eh 2 -p paste: | sed -ze 's/\n$//' | clipster
+
+{XF86MonBrightnessUp, XF86MonBrightnessDown}
+	xbacklight {-inc, -dec} 10

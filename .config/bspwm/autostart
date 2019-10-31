@@ -1,0 +1,3 @@
+compton &
+clipster -d &
+emacsclient --alternate-editor='' --no-wait --create-frame --frame-parameters='(quote (name . "floatmacs"))' --display $DISPLAY
