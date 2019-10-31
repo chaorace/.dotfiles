@@ -10,3 +10,4 @@
 (package! htmlize)
 (package! org-msg)
 (package! doom-themes)
+(package! frames-only-mode)

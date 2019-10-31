@@ -30,7 +30,7 @@ super + d
 	rofi -show
 
 super + Return
-	termite
+	emacsclient -c -n -e '(+shell/here)'
 
 super + semicolon
 	emacsclient -c -n -e '(switch-to-buffer nil)'
