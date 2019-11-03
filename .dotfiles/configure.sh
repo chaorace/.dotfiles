@@ -5,6 +5,7 @@ chmod +x "$HOME/.config/sxhkd/sxhkdrc"
 
 #Install packages, assumes Arch environment
 yay -S --needed --noconfirm emacs open-dyslexic-fonts firefox firefox-tridactyl-native shadowfox-updater firefox-tridactyl-git isync fdm notmuch afew mu
+sudo pacman -S --needed --noconfirm yay
 
 #Enable and run mbsync service
 systemctl --user enable mbsync.service
