@@ -13,6 +13,9 @@ set putfrom both
 set allowautofocus false
 setpref browser.autofocus false
 "" Firefox Preferences
+""" Don't automatically close on last tab closing, go to HN instead
+setpref browser.tabs.closeWindowWithLastTab false
+setpref browser.startup.homepage "https://news.ycombinator.com"
 """ Fixamo
 setpref privacy.resistFingerprinting.block_mozAddonManager true
 setpref extensions.webextensions.restrictedDomains ""
