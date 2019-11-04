@@ -9,7 +9,7 @@ super + {_, shift + }{1-9}
 	bspc {desktop -f,node --to-desktop} {I,II,III,IV,V,VI,VII,IIX,IX,X} --follow
 
 super + alt + {h, j, k, l}
-	~/.bin/bspwm/bspwm_resize.sh {west,south,north,east} 20
+	"$HOME/.bin/bspwm/bspwm_resize.sh" {west,south,north,east} 20
 
 super + s
 	bspc node -g sticky
@@ -36,13 +36,13 @@ super + semicolon
 	emacsclient -c -n -e '(switch-to-buffer nil)'
 
 super + space
-	~/.bin/bspwm/floatmacs.sh
+	"$HOME/.bin/bspwm/floatmacs.sh"
 
 ctrl + alt + Delete
 	screenlock
 
 ctrl + grave; s
-	sleep 0.2; scrot -s -f ~/screenshots/$(date +%s).png
+	sleep 0.2; scrot -s -f "$HOME/screenshots/$(date +%s).png"
 
 ctrl + grave; v
 	clipster -o -n 0 -0 | rofi -i -dmenu -sep '\x00' -eh 2 -p paste: | sed -ze 's/\n$//' | clipster
