@@ -1,3 +1,13 @@
-compton &
+setxkbmap -option caps:super
+compton -b &
 clipster -d &
 emacsclient --alternate-editor='' --no-wait --create-frame --frame-parameters='(quote (name . "floatmacs"))' --display $DISPLAY
+
+## Automount removable media
+devmon &
+## powersaving options
+xset s off &
+xset s noblank &
+xset s noexpose &
+xset c on &
+xset -dpms &

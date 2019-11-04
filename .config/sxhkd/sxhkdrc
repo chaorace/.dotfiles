@@ -26,6 +26,9 @@ super + {_, shift + } t
 super + {_, shift +} x
 	bspc node {--close, --kill}
 
+super + Tab
+	auto-presel
+
 super + d
 	rofi -show
 
@@ -46,6 +49,12 @@ ctrl + grave; s
 
 ctrl + grave; v
 	clipster -o -n 0 -0 | rofi -i -dmenu -sep '\x00' -eh 2 -p paste: | sed -ze 's/\n$//' | clipster
+
+ctrl + grave; r
+	ffcast -fs rec "$HOME/screenshots/r$(date +%s).mp4"
+
+ctrl + grave; R
+	pkill -n 'ffmpeg'
 
 {XF86MonBrightnessUp, XF86MonBrightnessDown}
 	xbacklight {-inc, -dec} 10
