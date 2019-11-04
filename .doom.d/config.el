@@ -197,5 +197,17 @@
         ("j" "Journal" entry (file+datetree "~/org/journal.org")
          "* %?\nEntered on %U\n  %i\n  %a")))
 
+(setq comint-output-filter-functions
+      (remove 'ansi-color-process-output comint-output-filter-functions))
+
+(setq comint-terminfo-terminal "xterm-256color")
+(add-hook 'shell-mode-hook
+          (defun shell-colors-fix ()
+            ;; Disable font-locking in this buffer to improve performance
+            (font-lock-mode -1)
+            ;; Prevent font-locking from being re-enabled in this buffer
+            (make-local-variable 'font-lock-function)
+            (setq font-lock-function (lambda (_) nil))
+            (add-hook 'comint-preoutput-filter-functions 'xterm-color-filter nil t)))
 (setq shell-prompt-pattern "^.*[#$%>λ\\n] ")
 (setq comint-prompt-read-only 't)
