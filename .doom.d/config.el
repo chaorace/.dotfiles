@@ -189,13 +189,26 @@
     (mu4e~proc-view(car (last (split-string
                                (notmuch-show-get-message-id)
                                ":"))) 't 'f)))
-(setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/org/todo.org" "Inbox")
-         "* TODO %?\n  %i\n  %a")
-        ("s" "Shopping" entry (file+headline "~/org/shopping.org" "Inbox")
-         "* TODO %?\n  %i\n  %a")
-        ("j" "Journal" entry (file+datetree "~/org/journal.org")
-         "* %?\nEntered on %U\n  %i\n  %a")))
+
+(setq org-agenda-files '("~/org/gtd/inbox.org"
+                         "~/org/gtd/gtd.org"
+                         "~/org/gtd/tickler.org"))
+
+(setq org-capture-templates '(("t" "Todo [inbox]" entry
+                               (file+headline "~/org/gtd/inbox.org" "Tasks")
+                               "* TODO %i%?")
+                              ("T" "Tickler" entry
+                               (file+headline "~/org/gtd/tickler.org" "Tickler")
+                               "* %i%? \n %U")
+                              ("j" "Journal" entry (file+datetree "~/org/journal.org")
+                               "* %?\nEntered on %U\n  %i\n  %a")
+                              ))
+
+(setq org-refile-targets '(("~/org/gtd/gtd.org" :maxlevel . 3)
+                           ("~/org/gtd/someday.org" :level . 1)
+                           ("~/org/gtd/tickler.org" :maxlevel . 2)))
+
+(setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
 
 (setenv "PAGER" "cat")
 
