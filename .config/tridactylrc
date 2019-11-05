@@ -64,7 +64,9 @@ bind N findnext -1
 bind ,<Space> nohlsearch
 
 "" Org Capture
-bind ch js javascript:location.href = 'org-protocol://capture-eww-readable?template=w&url=' + encodeURIComponent(location.href) + '&title=' + encodeURIComponent(document.title || "[untitled page]");
+bind ct js javascript:location.href = 'org-protocol://capture?template=c&url=' + encodeURIComponent(location.href) + '&title=' + encodeURIComponent(document.title || "[untitled page]");
+bind ch js javascript:location.href = 'org-protocol://capture?template=w&url=' + encodeURIComponent(location.href) + '&title=' + encodeURIComponent(document.title || "[untitled page]");
+bind cw js javascript:location.href = 'org-protocol://capture-eww-readable?template=w&url=' + encodeURIComponent(location.href) + '&title=' + encodeURIComponent(document.title || "[untitled page]");
 
 " URL redirects
 " No new Reddit

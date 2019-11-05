@@ -119,6 +119,15 @@
         :desc "attach"        "a" #'mail-add-attachment)
   (setq mu4e-split-view 'single-window)
   )
+(use-package! org-mu4e
+  :commands org-mu4e-store-and-capture
+  :after mu4e
+  :init
+  (map! :localleader
+        :map mu4e-view-mode-map
+        "c" 'org-mu4e-store-and-capture
+        )
+  )
 
 (setq org-msg-options "html-postamble:nil H:5 num:nil ^:{} toc:nil")
 (setq org-msg-startup "hidestars indent inlineimages")
@@ -199,6 +208,9 @@
 (setq org-capture-templates '(("t" "Todo [inbox]" entry
                                (file+headline "~/org/gtd/inbox.org" "Tasks")
                                "* TODO %i%?")
+                              ("m" "Todo from mail [inbox]" entry
+                               (file+headline "~/org/gtd/inbox.org" "Tasks")
+                               "* TODO %i%? \n %a")
                               ("T" "Tickler" entry
                                (file+headline "~/org/gtd/tickler.org" "Tickler")
                                "* %i%? \n %U")
@@ -207,6 +219,9 @@
                               ("w" "Web site" entry
                                (file+headline "~/org/gtd/inbox.org" "Tasks")
                                "* %a :website:\n\n%?\n\n%:initial")
+                              ("c" "Ticket" entry
+                               (file+headline "~/org/gtd/inbox.org" "Tickets")
+                               "* TODO %a \n%?%:initial")
                               ))
 
 (setq org-refile-targets '(("~/org/gtd/gtd.org" :maxlevel . 3)
