@@ -97,6 +97,7 @@
         ;; Make the email fields more outlook-like while viewing
         mu4e-view-fill-headers nil
         mu4e-view-fields '(:from :date :to  :cc :subject)
+        mu4e-view-auto-mark-as-read nil
         )
 
         (setq mu4e-compose-complete-ignore-address-regexp
