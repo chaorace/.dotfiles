@@ -63,6 +63,9 @@ bind n findnext 1
 bind N findnext -1
 bind ,<Space> nohlsearch
 
+"" Org Capture
+bind ch js javascript:location.href = 'org-protocol://capture-eww-readable?template=w&url=' + encodeURIComponent(location.href) + '&title=' + encodeURIComponent(document.title || "[untitled page]");
+
 " URL redirects
 " No new Reddit
 autocmd DocStart ^http(s?)://www.reddit.com js tri.excmds.urlmodify("-t", "www", "old")

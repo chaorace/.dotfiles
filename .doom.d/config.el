@@ -190,6 +190,8 @@
                                (notmuch-show-get-message-id)
                                ":"))) 't 'f)))
 
+(def-package! org-protocol-capture-html :after org-protocol)
+
 (setq org-agenda-files '("~/org/gtd/inbox.org"
                          "~/org/gtd/gtd.org"
                          "~/org/gtd/tickler.org"))
@@ -202,6 +204,9 @@
                                "* %i%? \n %U")
                               ("j" "Journal" entry (file+datetree "~/org/journal.org")
                                "* %?\nEntered on %U\n  %i\n  %a")
+                              ("w" "Web site" entry
+                               (file+headline "~/org/gtd/inbox.org" "Tasks")
+                               "* %a :website:\n\n%?\n\n%:initial")
                               ))
 
 (setq org-refile-targets '(("~/org/gtd/gtd.org" :maxlevel . 3)
