@@ -230,8 +230,9 @@
                            ("~/org/gtd/tickler.org" :maxlevel . 2)
                            ("~/org/gtd/reference.org" :maxlevel . 2)))
 
-(setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
 (setq org-refile-allow-creating-parent-nodes 'confirm)
+
+(setq org-todo-keywords '((sequence "TODO(t)" "WAIT(w)" "[%](p)" "|" "DONE(d)" "DEAD(D)")))
 
 (setenv "PAGER" "cat")
 
