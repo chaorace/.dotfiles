@@ -234,6 +234,37 @@
 
 (setq org-todo-keywords '((sequence "TODO(t)" "WAIT(w)" "[%](p)" "|" "DONE(d)" "DEAD(D)")))
 
+(setq org-agenda-custom-commands
+        '(("w" "Work tasks" tags-todo "@work"
+           ((org-agenda-overriding-header  "Work" )
+            (org-agenda-skip-function #'cc-org-agenda-skip-all-siblings-but-first)))
+          ("h" "Home tasks" tags-todo "@home"
+           ((org-agenda-overriding-header  "Home" )
+            (org-agenda-skip-function #'cc-org-agenda-skip-all-siblings-but-first)))
+          ("c" "Chores" tags-todo "@chores"
+           ((org-agenda-overriding-header  "Chores" )
+            (org-agenda-skip-function #'cc-org-agenda-skip-all-siblings-but-first)))
+          ("o" "Shopping" tags-todo "@chores"
+           ((org-agenda-overriding-header  "Chores" )
+            (org-agenda-skip-function #'cc-org-agenda-skip-all-siblings-but-first)))
+          ))
+
+(defun cc-org-current-is-todo ()
+  (string= "TODO" (org-get-todo-state)))
+
+(defun cc-org-agenda-skip-all-siblings-but-first ()
+  "Skip all but the first non-done entry."
+  (let (should-skip-entry)
+    (unless (cc-org-current-is-todo)
+      (setq should-skip-entry t))
+    (save-excursion
+      (while (and (not should-skip-entry) (org-goto-sibling t))
+        (when (cc-org-current-is-todo)
+          (setq should-skip-entry t))))
+    (when should-skip-entry
+      (or (outline-next-heading)
+            (goto-char (point-max))))))
+
 (setenv "PAGER" "cat")
 
 (setq comint-output-filter-functions
