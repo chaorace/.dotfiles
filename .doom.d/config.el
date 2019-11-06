@@ -265,6 +265,10 @@
       (or (outline-next-heading)
             (goto-char (point-max))))))
 
+(after! org
+  (map! :map org-mode-map
+        :localleader "Q" #'org-change-tag-in-region))
+
 (setenv "PAGER" "cat")
 
 (setq comint-output-filter-functions
