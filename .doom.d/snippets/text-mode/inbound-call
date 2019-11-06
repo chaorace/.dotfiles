@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: Outbound Call
-# key: cout
+# name: Inbound Call
+# key: cin
 # --
 --Outbound Call
 --Phone Number: $1
