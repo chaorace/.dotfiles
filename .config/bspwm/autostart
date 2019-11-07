@@ -1,7 +1,7 @@
 setxkbmap -option caps:super
 compton -b &
 clipster -d &
-emacsclient --alternate-editor='' --no-wait --create-frame --frame-parameters='(quote (name . "floatmacs"))' --display $DISPLAY
+emacsclient --create-frame --frame-parameters='(quote (name . "floatmacs"))' --display $DISPLAY
 
 ## Automount removable media
 devmon &
