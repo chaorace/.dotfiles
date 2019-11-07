@@ -232,6 +232,10 @@
 
 (setq org-refile-allow-creating-parent-nodes 'confirm)
 
+(advice-add 'org-refile :after
+        (lambda (&rest _)
+        (org-save-all-org-buffers)))
+
 (setq org-todo-keywords '((sequence "TODO(t)" "WAIT(w)" "|" "DONE(d)" "DEAD(D)")))
 
 (setq org-agenda-custom-commands
