@@ -2,7 +2,7 @@
 # name: Inbound Call
 # key: cin
 # --
---Outbound Call
+--Inbound Call
 --Phone Number: $1
 --Speaking With: $2 - $3
 
