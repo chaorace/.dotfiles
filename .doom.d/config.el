@@ -232,7 +232,7 @@
 
 (setq org-refile-allow-creating-parent-nodes 'confirm)
 
-(setq org-todo-keywords '((sequence "TODO(t)" "WAIT(w)" "[%](p)" "|" "DONE(d)" "DEAD(D)")))
+(setq org-todo-keywords '((sequence "TODO(t)" "WAIT(w)" "|" "DONE(d)" "DEAD(D)")))
 
 (setq org-agenda-custom-commands
         '(("w" "Work tasks" tags-todo "@work"
