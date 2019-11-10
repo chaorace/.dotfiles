@@ -273,6 +273,8 @@
   (map! :map org-mode-map
         :localleader "Q" #'org-change-tag-in-region))
 
+(setq org-image-actual-width 400)
+
 (setenv "PAGER" "cat")
 
 (setq comint-output-filter-functions
