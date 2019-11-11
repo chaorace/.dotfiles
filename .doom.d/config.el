@@ -9,20 +9,19 @@
 (auto-fill-mode -1)
 
 ;; Appearance
-(set-face-attribute 'default nil :font "OpenDyslexicMono-9" )
-(after! doom-themes
+(defun init-theme (&optional _frame)
+  (set-face-attribute 'default nil :font "IosevkaEtoile-9" )
+  (load-theme 'doom-Iosvkem t)
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t)
-  (load-theme 'doom-solarized-dark  t)
-
-  ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config)
-
-  ;; Enable custom neotree theme (all-the-icons must be installed!)
   (doom-themes-neotree-config)
+  (doom-themes-org-config)
+  (remove-hook 'after-make-frame-functions 'init-theme))
 
-  ;; Corrects (and improves) org-mode's native fontification.
-  (doom-themes-org-config))
+(if (daemonp)
+    (add-hook 'after-make-frame-functions 'init-theme)
+  (init-theme))
 
 (defun cc-compose (&rest funs)
   "Return function composed of FUNS."
