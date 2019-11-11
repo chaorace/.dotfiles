@@ -248,8 +248,8 @@
           ("c" "Chores" tags-todo "@chores"
            ((org-agenda-overriding-header  "Chores" )
             (org-agenda-skip-function #'cc-org-agenda-skip-all-siblings-but-first)))
-          ("o" "Shopping" tags-todo "@chores"
-           ((org-agenda-overriding-header  "Chores" )
+          ("o" "Shopping" tags-todo "shopping"
+           ((org-agenda-overriding-header  "Shopping" )
             (org-agenda-skip-function #'cc-org-agenda-skip-all-siblings-but-first)))
           ))
 
