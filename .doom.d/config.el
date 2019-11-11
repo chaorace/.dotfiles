@@ -4,6 +4,10 @@
 (frames-only-mode)
 (atomic-chrome-start-server)
 
+;; Global editor behavior
+(global-visual-line-mode t)
+(auto-fill-mode -1)
+
 ;; Appearance
 (set-face-attribute 'default nil :font "OpenDyslexicMono-9" )
 (after! doom-themes
