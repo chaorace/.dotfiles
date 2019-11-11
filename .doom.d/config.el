@@ -228,7 +228,7 @@
 (setq org-refile-targets '(("~/org/gtd/gtd.org" :maxlevel . 3)
                            ("~/org/gtd/someday.org" :level . 1)
                            ("~/org/gtd/tickler.org" :maxlevel . 2)
-                           ("~/org/gtd/reference.org" :maxlevel . 2)))
+                           ("~/org/gtd/reference.org" :maxlevel . 10)))
 
 (setq org-refile-allow-creating-parent-nodes 'confirm)
 
