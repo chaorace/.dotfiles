@@ -294,3 +294,11 @@
             (add-hook 'comint-preoutput-filter-functions 'xterm-color-filter nil t)))
 (setq shell-prompt-pattern "^.*[#$%>λ\\n] ")
 (setq comint-prompt-read-only 't)
+
+;;Elfeed
+(use-package! elfeed)
+(use-package! elfeed-org
+  :after elfeed
+  :config
+  (elfeed-org)
+  (setq rmh-elfeed-org-files (list "~/.doom.d/elfeed.org")))
