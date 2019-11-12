@@ -9,19 +9,15 @@
 (auto-fill-mode -1)
 
 ;; Appearance
-(defun init-theme (&optional _frame)
-  (set-face-attribute 'default nil :font "IosevkaEtoile-9" )
+(use-package! doom-themes
+  :config
+  (add-to-list 'default-frame-alist '(font . "IosevkaEtoile-9"))
   (load-theme 'doom-Iosvkem t)
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t)
   (doom-themes-visual-bell-config)
   (doom-themes-neotree-config)
-  (doom-themes-org-config)
-  (remove-hook 'after-make-frame-functions 'init-theme))
-
-(if (daemonp)
-    (add-hook 'after-make-frame-functions 'init-theme)
-  (init-theme))
+  (doom-themes-org-config))
 
 (defun cc-compose (&rest funs)
   "Return function composed of FUNS."
