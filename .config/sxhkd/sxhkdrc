@@ -48,7 +48,7 @@ ctrl + grave; s
 	sleep 0.2; scrot -s -f "$HOME/screenshots/$(date +%s).png"
 
 ctrl + grave; v
-	clipster -o -n 0 -0 | rofi -i -dmenu -sep '\x00' -eh 2 -p paste: | sed -ze 's/\n$//' | clipster
+	clipster -o -n 0 -0 | rofi -i -dmenu -sep '\x00' -eh 2 -p paste: | sed -ze 's/\n$//' | clipster -c
 
 ctrl + grave; r
 	ffcast -fs rec "$HOME/screenshots/r$(date +%s).mp4"
