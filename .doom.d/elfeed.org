@@ -78,7 +78,6 @@
 **** [[https://www.youtube.com/feeds/videos.xml?channel_id=UC5fdssPqmmGhkhsJi4VcckA][Innuendo Studios]]
 **** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCJIhHaMTzWvv3FdpC3cyCEQ][Critz & Giggles]]
 **** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCBPggmhnWOiOhmqPtyu1-FQ][motdef]]
-**** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCvaxEdcR_ibls5I4_LYsEYA][A_Rival Planetskill]]
 **** [[https://www.youtube.com/feeds/videos.xml?channel_id=UC2bkHVIDjXS7sgrgjFtzOXQ][engineerguy]]
 **** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCgWC2WNHevYgyzGBdeulgGg][Only Available Username]]
 **** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCpAwtVHwXUnEmGgY9DVkk-w][Nigma's Vidya Channel]]
@@ -88,20 +87,21 @@
 **** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCUHW94eEFW7hkUMVaZz4eDg][minutephysics]]
 **** [[https://www.youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA][Computerphile]]
 **** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCeiYXex_fwgYDonaTcSIk6w][MinuteEarth]]
-**** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCxNJyUGv8Fe2I9oh1PjBIuA][Dr. Face]]
 **** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCoxcjq-8xIDTYp3uz647V5A][Numberphile]]
-**** [[https://www.youtube.com/feeds/videos.xml?channel_id=UC6c6mMQNEY6i6_Z2NBY0C1w][Tipsy Duck]]
 **** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCWCw2Sd7RlYJ2yuNVHDWNOA][Jim Sterling]]
 **** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q][Kurzgesagt – In a Nutshell]]
-**** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCGzZXSMNaiUFPiI2_nSktag][Red Robot]]
-**** [[https://www.youtube.com/feeds/videos.xml?channel_id=UC0BvmQ-UWDnDc9seBcSanRA][Greasy Tales]]
 **** [[https://www.youtube.com/feeds/videos.xml?channel_id=UC3XTzVzaHQEd30rQbuvCtTQ][LastWeekTonight]]
-**** [[https://www.youtube.com/feeds/videos.xml?channel_id=UC9Ntx-EF3LzKY1nQ5rTUP2g][cyriak]]
 **** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCqg5FCR7NrpvlBWMXdt-5Vg][Escapist]]
 **** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCgSHGbs2oGoLItc-8y5hJ9g][STAR_]]
 *** Web Comics                                                        :comics:
 **** [[https://xkcd.com/atom.xml][XKCD]]                                                       :comedy:tech:
-**** [[https://www.smbc-comics.com/comic/rss][SMBC]]                                                            :comedy:
 *** Blogs                                                              :blogs:
 **** Tech Errata                                                       :tech:
 ***** [[https://devblogs.microsoft.com/oldnewthing/feed/][Microsoft: Old New Thing]]
+***** [[https://randomascii.wordpress.com/feed/][Random ASCII: Google/Windows Engineer]]
+***** [[http://feeds.feedburner.com/codinghorror][Coding Horror]]
+**** Engineering                                                :engineering:
+***** [[https://what-if.xkcd.com/feed.atom][XKCD: What If?]]
+**** Emulation                                                    :emulation:
+***** [[https://www.byuu.page/feeds/posts/default][Byuu's Development Blog]]
+***** [[https://dolphin-emu.org/blog/feeds/][Dolphin Emulator Blog]]
