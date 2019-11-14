@@ -166,6 +166,7 @@
 
 (setq ssh-directory-tracking-mode nil)
 (load! "packages/ssh.el")
+(load! "packages/powershell-mode.el")
 
 (defun cisco-yank()
   (interactive)
