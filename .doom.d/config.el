@@ -209,6 +209,7 @@
   (setq notmuch-tree-show-out 't)
   (map! :map notmuch-tree-mode-map
         :nv "DEL" #'cc-kill-thread
+        :nv "g r" #'notmuch-poll-and-refresh-this-buffer
         :nv "c" nil
         :nv "c" #'mu4e-compose-new)
   (setq notmuch-poll-script "notmuch new -c")
