@@ -51,8 +51,11 @@
 (defalias 'cc-lpass-user (apply-partially 'cc-lpass "show" "--username"))
 (defalias 'cc-lpass-pass (apply-partially 'cc-lpass "show" "--password"))
 (setq cc-lpass-work-email "Business/microsoftonline.com")
+(setq cc-lpass-home-email "auth/gmail-app")
 (defalias 'cc-fetch-work-email (apply-partially 'cc-lpass-user cc-lpass-work-email))
 (defalias 'cc-fetch-work-password (apply-partially 'cc-lpass-pass cc-lpass-work-email))
+(defalias 'cc-fetch-home-email (apply-partially 'cc-lpass-user cc-lpass-home-email))
+(defalias 'cc-fetch-home-password (apply-partially 'cc-lpass-pass cc-lpass-home-email))
 
 ;;Mail
 (setq user-mail-address (funcall 'cc-fetch-work-email)
@@ -67,6 +70,22 @@
 (setq mail-user-agent 'mu4e-user-agent)
 (setq mu4e-sent-folder "/work/Sent Items")
 (setq mu4e-drafts-folder "/work/Drafts")
+
+(defvar my-mu4e-account-alist
+  '(("work"
+     (mu4e-sent-folder "/work/Sent Items")
+     (mu4e-drafts-folder "/work/Drafts")
+     (user-mail-address (funcall 'cc-fetch-work-email))
+     (smtpmail-smtp-user (funcall 'cc-fetch-work-email))
+     (smtpmail-smtp-server "smtp.office365.com"))
+    ("home"
+     (mu4e-sent-folder "/gmail/[Gmail]/Sent Mail")
+     (mu4e-drafts-folder "/gmail/[Gmail]/Drafts")
+     (user-mail-address (funcall 'cc-fetch-home-email))
+     (smtpmail-smtp-user (funcall 'cc-fetch-home-email))
+     (smtpmail-smtp-server "smtp.gmail.com")
+     (smtpmail-stream-type starttls)
+     (smtpmail-smtp-service 587))))
 
 (def-package! mu4e
   :commands mu4e~proc-view mu4e-update-index
@@ -178,6 +197,7 @@
 (after! notmuch
   (setq notmuch-saved-searches
         '((:name "inbox"   :query "tag:work/Inbox not tag:trash not tag:killed" :key "i")
+          (:name "home inbox"   :query "tag:gmail/Inbox not tag:trash not tag:killed" :key "I")
           (:name "sent"    :query "tag:\"work/Sent Items\""                :key "s")
           (:name "flagged" :query "tag:flagged"             :key "f")
           (:name "me"      :query "tag:work/Inbox/Me not tag:trash not tag:killed"       :key "m")
