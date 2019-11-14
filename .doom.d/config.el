@@ -74,6 +74,7 @@
   (provide 'html2text) ; disable obsolete package
   (setq mu4e-maildir "~/.mail"
         mu4e-attachment-dir "~/.mail/.attachments")
+  (mu4e-update-index)
   :config
   (setq mu4e-update-interval nil
         mu4e-view-show-addresses t
@@ -104,7 +105,7 @@
   (when (featurep! :tools flyspell)
     (add-hook 'mu4e-compose-mode-hook #'flyspell-mode))
 
-  (add-hook 'mu4e-compose-mode-hook #'mu4e~request-contacts)
+  (add-hook 'mu4e-compose-mode-hook #'mu4e~request-contacts-maybe)
 
   ;; Wrap text in messages
   (setq-hook! 'mu4e-view-mode-hook truncate-lines nil)
@@ -121,7 +122,6 @@
   )
 (use-package! org-mu4e
   :commands org-mu4e-store-and-capture
-  :after mu4e
   :init
   (map! :localleader
         :map mu4e-view-mode-map
@@ -173,7 +173,8 @@
   )
 
 (def-package! notmuch
-  :commands notmuch-poll)
+  :commands notmuch-poll
+  :after mu4e)
 
 (defun cc-kill-thread() (interactive)(notmuch-tree-tag-thread (list "+killed")))
 (defun cc-unkill-thread() (interactive)(notmuch-tree-tag-thread (list "-killed")))
@@ -194,6 +195,7 @@
         :nv "DEL" #'cc-kill-thread
         :nv "c" nil
         :nv "c" #'mu4e-compose-new)
+  (setq notmuch-poll-script "notmuch new -c")
   (defun notmuch-tree-show-message-out()
     (mu4e~proc-view(car (last (split-string
                                (notmuch-show-get-message-id)
