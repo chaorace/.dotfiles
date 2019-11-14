@@ -113,13 +113,9 @@
   (when (fboundp 'imagemagick-register-types)
     (imagemagick-register-types))
 
-  (map! :map mu4e-compose-mode-map
-        :desc "send and exit" "s" #'message-send-and-exit
-        :desc "kill buffer"   "d" #'message-kill-buffer
-        :desc "save draft"    "S" #'message-dont-send
-        :desc "attach"        "a" #'mail-add-attachment)
   (setq mu4e-split-view 'single-window)
   )
+
 (use-package! org-mu4e
   :commands org-mu4e-store-and-capture
   :init
