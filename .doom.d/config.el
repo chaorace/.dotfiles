@@ -16,7 +16,7 @@
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t)
   (doom-themes-visual-bell-config)
-  (doom-themes-neotree-config)
+  (doom-themes-treemacs-config)
   (doom-themes-org-config))
 
 (defun cc-compose (&rest funs)
