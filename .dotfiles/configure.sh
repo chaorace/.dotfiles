@@ -7,6 +7,11 @@ chmod +x "$HOME/.config/sxhkd/sxhkdrc"
 sudo pacman -S --needed --noconfirm yay
 yay -S --needed --noconfirm emacs open-dyslexic-fonts ttf-iosevka-etoile firefox firefox-tridactyl-native shadowfox-updater firefox-tridactyl-git isync fdm notmuch afew mu ffcast scrot devmon pandoc languagetool aspell-en
 
+#Fix permissions on fdm config so that it actually works
+chmod 640 .fdm.conf
+#Create mail directories
+mkdir -p ~/.mail/work
+mkdir -p ~/.mail/gmail
 #Enable and run mbsync service
 systemctl --user enable mbsync.service
 systemctl --user enable mbsync.timer
