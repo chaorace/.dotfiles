@@ -70,6 +70,15 @@
   (provide 'html2text) ; disable obsolete package
   (setq mu4e-maildir "~/.mail"
         mu4e-attachment-dir "~/.mail/.attachments")
+  (defun mu4e-quit()
+    "Quit the mu4e session."
+    (interactive)
+    (if mu4e-confirm-quit
+      (when (y-or-n-p (mu4e-format "Are you sure you want to quit?"))
+      (mu4e~stop))
+      (mu4e~stop))
+    (switch-to-buffer notmuch-last-tree))
+
   (mu4e-update-index)
   :config
   (setq mu4e-update-interval nil
@@ -216,6 +225,7 @@
         :nv "c" nil
         :nv "c" #'mu4e-compose-new)
   (defun notmuch-tree-show-message-out()
+    (setq notmuch-last-tree (current-buffer))
     (mu4e~proc-view(car (last (split-string
                                (notmuch-show-get-message-id)
                                ":"))) 't 'f)))
