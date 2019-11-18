@@ -58,35 +58,11 @@
 (defalias 'cc-fetch-home-password (apply-partially 'cc-lpass-pass cc-lpass-home-email))
 
 ;;Mail
-(setq user-mail-address (funcall 'cc-fetch-work-email)
-      user-full-name  "Christopher Crockett")
-
-(setq smtpmail-smtp-server "smtp.office365.com"
-      smtpmail-smtp-service 587
-      smtpmail-smtp-user (funcall 'cc-fetch-work-email)
-      send-mail-function 'smtpmail-send-it
-      message-send-mail-function 'smtpmail-send-it)
-
+(setq user-full-name  "Christopher Crockett")
+(setq smtpmail-smtp-service 587)
 (setq mail-user-agent 'mu4e-user-agent)
-(setq mu4e-sent-folder "/work/Sent Items")
-(setq mu4e-drafts-folder "/work/Drafts")
 
-(defvar my-mu4e-account-alist
-  '(("work"
-     (mu4e-sent-folder "/work/Sent Items")
-     (mu4e-drafts-folder "/work/Drafts")
-     (user-mail-address (funcall 'cc-fetch-work-email))
-     (smtpmail-smtp-user (funcall 'cc-fetch-work-email))
-     (smtpmail-smtp-server "smtp.office365.com"))
-    ("home"
-     (mu4e-sent-folder "/gmail/[Gmail]/Sent Mail")
-     (mu4e-drafts-folder "/gmail/[Gmail]/Drafts")
-     (user-mail-address (funcall 'cc-fetch-home-email))
-     (smtpmail-smtp-user (funcall 'cc-fetch-home-email))
-     (smtpmail-smtp-server "smtp.gmail.com")
-     (smtpmail-stream-type starttls)
-     (smtpmail-smtp-service 587))))
-
+(add-to-list 'load-path "/usr/share/emacs/site-lisp/mu4e")
 (def-package! mu4e
   :commands mu4e~proc-view mu4e-update-index
   :init
@@ -119,8 +95,36 @@
         mu4e-view-auto-mark-as-read nil
         )
 
-        (setq mu4e-compose-complete-ignore-address-regexp
-              "\\(no-?reply\\|adcom$\\|adcomolu\\|adcsolu\\|adcomso$\\|adcomsolutions.co$\\|adcomsoulutions\\|adcomsolutons\\)")
+
+  (setq mu4e-contexts
+        `( ,(make-mu4e-context
+             :name "work"
+             :match-func (lambda (msg)
+                           (when msg
+                             (string-match-p "^/work" (mu4e-message-field msg :maildir))))
+             :vars '((user-mail-address . (funcall 'cc-fetch-work-email))
+                     (smtpmail-smtp-user . (funcall 'cc-fetch-work-email))
+                     (smtpmail-smtp-server . "smtp.office365.com")
+                     (mu4e-sent-folder . "/work/Sent Items")
+                     (mu4e-drafts-folder . "/work/Drafts")
+                     (org-msg-signature . (with-temp-buffer
+                                            (insert-file-contents "~/.doom.d/mail/signature.org")
+                                            (buffer-string)))))
+           ,(make-mu4e-context
+             :name "home"
+             :match-func (lambda (msg)
+                           (when msg
+                             (string-match-p "^/gmail" (mu4e-message-field msg :maildir))))
+             :vars '((user-mail-address . (funcall 'cc-fetch-home-email))
+                     (smtpmail-smtp-user . (funcall 'cc-fetch-home-email))
+                     (smtpmail-smtp-server . "smtp.gmail.com")
+                     (mu4e-sent-folder . "/gmail/[Gmail]/Sent Mail")
+                     (mu4e-drafts-folder . "/gmail/[Gmail]/Drafts")
+                     (org-msg-signature . "")
+                     ))))
+
+  (setq mu4e-compose-complete-ignore-address-regexp
+        "\\(no-?reply\\|adcom$\\|adcomolu\\|adcsolu\\|adcomso$\\|adcomsolutions.co$\\|adcomsoulutions\\|adcomsolutons\\)")
   (when (featurep! :tools flyspell)
     (add-hook 'mu4e-compose-mode-hook #'flyspell-mode))
 
@@ -148,9 +152,6 @@
 (setq org-msg-startup "hidestars indent inlineimages")
 ;;(setq org-msg-greeting-fmt "\nHi %s,\n\n") TODO: Base response on time of day
 (setq org-msg-greeting-fmt-mailto t)
-(setq org-msg-signature (with-temp-buffer
-        (insert-file-contents "~/.doom.d/mail/signature.org")
-        (buffer-string)))
 (setq org-msg-enforce-css "~/.doom.d/mail/signature.css")
 
 (def-package! htmlize)
@@ -213,7 +214,6 @@
         :nv "g r" #'notmuch-poll-and-refresh-this-buffer
         :nv "c" nil
         :nv "c" #'mu4e-compose-new)
-  (setq notmuch-poll-script "notmuch new -c")
   (defun notmuch-tree-show-message-out()
     (mu4e~proc-view(car (last (split-string
                                (notmuch-show-get-message-id)

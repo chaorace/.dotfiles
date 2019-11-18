@@ -7,7 +7,6 @@
 ;; (package! builtin-package :disable t)
 (disable-packages! undo-tree )
 (package! atomic-chrome)
-(package! mu4e)
 (package! org-msg)
 (package! doom-themes)
 (package! frames-only-mode)
