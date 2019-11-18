@@ -307,9 +307,5 @@
 (setq comint-prompt-read-only 't)
 
 ;;Elfeed
-(use-package! elfeed)
-(use-package! elfeed-org
-  :after elfeed
-  :config
-  (elfeed-org)
-  (setq rmh-elfeed-org-files (list "~/.doom.d/elfeed.org")))
+(after! elfeed
+  (setq elfeed-search-filter "@2-week-ago -youtube"))
