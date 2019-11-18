@@ -7,6 +7,7 @@
 ;; Global editor behavior
 (global-visual-line-mode t)
 (auto-fill-mode -1)
+(setq langtool-java-classpath "/usr/share/languagetool:/usr/share/java/languagetool/*")
 
 ;; Appearance
 (use-package! doom-themes
