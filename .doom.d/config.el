@@ -309,3 +309,8 @@
 ;;Elfeed
 (after! elfeed
   (setq elfeed-search-filter "@2-week-ago -youtube"))
+
+;;Popups
+(after! popups
+  (set-popup-rule! "^\\*WoMan" :ignore t)
+  )

@@ -38,6 +38,9 @@ super + Return
 super + semicolon
 	emacsclient -c -n -e '(switch-to-buffer nil)'
 
+super + slash
+	emacsclient -c -n -e '(woman)'
+
 super + space
 	"$HOME/.bin/bspwm/floatmacs.sh"
 
