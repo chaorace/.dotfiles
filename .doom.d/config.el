@@ -7,7 +7,11 @@
 ;; Global editor behavior
 (global-visual-line-mode t)
 (auto-fill-mode -1)
+
+;;Fixes
 (setq langtool-java-classpath "/usr/share/languagetool:/usr/share/java/languagetool/*")
+(setq plantuml-jar-path "/usr/share/java/plantuml/plantuml.jar")
+(setq org-plantuml-jar-path plantuml-jar-path)
 
 ;; Appearance
 (use-package! doom-themes
