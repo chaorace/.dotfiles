@@ -1,0 +1,14 @@
+# /etc/systemd/system/rclone.service
+[Unit]
+Description=Org S3 sync (rclone)
+
+[Service]
+Type=simple
+PreExecStart=/bin/fusermount -u %h/org
+ExecStart=%h/.bin/rclone-org.sh
+ExecStop=/bin/fusermount -u %h/org
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target
