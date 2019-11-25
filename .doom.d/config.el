@@ -322,7 +322,10 @@
 
 ;;Elfeed
 (after! elfeed
-  (setq elfeed-search-filter "@2-week-ago -youtube"))
+  (setq elfeed-search-filter "@2-week-ago -youtube")
+  (add-hook 'elfeed-show-mode-hook 'mixed-pitch-mode)
+  (setq elfeed-show-entry-switch #'switch-to-buffer)
+  )
 
 ;;Popups
 (after! popups
