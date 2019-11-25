@@ -184,8 +184,11 @@
  '(custom-safe-themes
    (quote
     ("428754d8f3ed6449c1078ed5b4335f4949dc2ad54ed9de43c56ea9b803375c23" default)))
- '(smtpmail-smtp-server "smtp.office365.com" t)
- '(smtpmail-smtp-service 25 t))
+ '(smtpmail-smtp-server "smtp.office365.com")
+ '(smtpmail-smtp-service 25)
+ '(text-mode-hook
+   (quote
+    (er/add-text-mode-expansions flyspell-mode +flyspell-remove-run-together-switch-for-aspell-h yas-minor-mode-on display-line-numbers-mode hl-line-mode goto-address-mode vi-tilde-fringe-mode text-mode-hook-identify))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

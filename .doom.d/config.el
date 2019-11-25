@@ -5,8 +5,7 @@
 (atomic-chrome-start-server)
 
 ;; Global editor behavior
-(global-visual-line-mode t)
-(auto-fill-mode -1)
+(+global-word-wrap-mode +1)
 
 ;;Fixes
 (setq langtool-java-classpath "/usr/share/languagetool:/usr/share/java/languagetool/*")
