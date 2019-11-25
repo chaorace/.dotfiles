@@ -17,6 +17,9 @@ systemctl --user enable mbsync.service
 systemctl --user enable mbsync.timer
 systemctl --user start mbsync.timer
 
+#Get org folder ready for sync
+mkdir "$HOME/org"
+
 #Load Doom Emacs package
 git clone -b develop https://github.com/hlissner/doom-emacs "$HOME/.emacs.d"
 "$HOME/.emacs.d/bin/doom" refresh
