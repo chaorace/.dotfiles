@@ -15,7 +15,7 @@
 ;; Appearance
 (use-package! doom-themes
   :config
-  (add-to-list 'default-frame-alist '(font . "IosevkaEtoile-9"))
+  (setq doom-font "IosevkaEtoile-9")
   (load-theme 'doom-Iosvkem t)
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t)
