@@ -14,3 +14,4 @@
 (package! undo-redo :recipe (:host github :repo "clemera-dev/undo-redo"))
 (package! xterm-color)
 (package! org-protocol-capture-html :recipe (:host github :repo "samspills/org-protocol-capture-html"))
+(package! battery)
