@@ -23,6 +23,8 @@
   (doom-themes-treemacs-config)
   (doom-themes-org-config))
 
+(load! "+scrolling")
+
 (defun cc-compose (&rest funs)
   "Return function composed of FUNS."
   (lexical-let ((lex-funs funs))
