@@ -20,6 +20,11 @@ systemctl --user start mbsync.timer
 #Get org folder ready for sync
 mkdir "$HOME/org"
 
+#Immediately make Capslock into Super
+setxkbmap -option caps:super
+#Permanently map Capslock to Super
+localectl set-x11-keymap us "" "" caps:super
+
 #Load Doom Emacs package
 git clone -b develop https://github.com/hlissner/doom-emacs "$HOME/.emacs.d"
 "$HOME/.emacs.d/bin/doom" refresh
