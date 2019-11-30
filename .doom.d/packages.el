@@ -15,3 +15,4 @@
 (package! xterm-color)
 (package! org-protocol-capture-html :recipe (:host github :repo "samspills/org-protocol-capture-html"))
 (package! battery)
+(package! spotify :recipe (:host github :repo "danielfm/spotify.el" :files ("*.el" "*.py")))

@@ -343,3 +343,5 @@
                                                   (funcall battery-status-function)))))
     (display-battery-mode 1))
   )
+
+(load! "+spotify")
