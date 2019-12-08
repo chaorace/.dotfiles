@@ -5,7 +5,7 @@ chmod +x "$HOME/.config/sxhkd/sxhkdrc"
 
 #Install packages, assumes Arch environment
 sudo pacman -S --needed --noconfirm yay
-yay -S --needed --noconfirm emacs open-dyslexic-fonts ttf-iosevka-etoile firefox firefox-tridactyl-native shadowfox-updater firefox-tridactyl-git isync fdm notmuch afew mu ffcast scrot devmon pandoc languagetool aspell-en rclone lpass plantuml
+yay -S --needed --noconfirm emacs open-dyslexic-fonts ttf-iosevka-etoile firefox firefox-tridactyl-native shadowfox-updater firefox-tridactyl-git isync fdm notmuch afew mu ffcast scrot devmon pandoc languagetool aspell-en rclone lpass plantuml basilisk-bin
 
 #Fix permissions on fdm config so that it actually works
 chmod 640 .fdm.conf

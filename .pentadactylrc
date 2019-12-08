@@ -1,0 +1,84 @@
+"Pentadactyl Config
+set hintkeys=asdfghjkl
+set guioptions=bC
+set editor='/usr/bin/emacsclient -c +<line>:<column> <file>'
+colorscheme gruvbox-dark
+
+"Basilisk Config
+set! browser.smoothScroll=false
+set! general.smoothScroll=false
+set! signon.rememberSignons=false
+set! dom.webnotifications.enabled=false
+set! security.sandbox.content.level=0
+
+"Remap close to x
+map -b x d
+
+"Remap page navigation
+map -b j 5j
+map -b k 5k
+map -b u <C-u>
+map -b d <C-d>
+
+"Map Lastpass chords
+map ;k <A-PageUp>
+map ;j <A-PageDown>
+
+"Remap tab navigation
+map -b K gt
+map -b J gT
+map -ex <lt><lt> :tabmove! -1
+map -ex >> :tabmove! +1
+
+"Bind toggle for toolbar
+map -ex cog :set guioptions!=T
+
+"SNOW shortcuts
+"Save
+map -js zs <<EOF
+    var evt = document.createEvent('Event');
+    evt.initEvent('MOD_quickSave', true, false);
+    document.dispatchEvent(evt);
+EOF
+"Hold
+map -js zh <<EOF
+    var evt = document.createEvent('Event');
+    evt.initEvent('MOD_quickHold', true, false);
+    document.dispatchEvent(evt);
+EOF
+"Post
+map -js zp <<EOF
+    var evt = document.createEvent('Event');
+    evt.initEvent('MOD_quickPost', true, false);
+    document.dispatchEvent(evt);
+EOF
+"Selfassign
+map -js zt <<EOF
+    var evt = document.createEvent('Event');
+    evt.initEvent('MOD_quickAssign', true, false);
+    document.dispatchEvent(evt);
+EOF
+"Resolve
+map -js zq <<EOF
+    var evt = document.createEvent('Event');
+    evt.initEvent('MOD_quickSolve', true, false);
+    document.dispatchEvent(evt);
+EOF
+"Toggle timer pause
+map -js z; <<EOF
+    var evt = document.createEvent('Event');
+    evt.initEvent('MOD_togglePause', true, false);
+    document.dispatchEvent(evt);
+EOF
+"Set timer to 0
+map -js z: <<EOF
+    var evt = document.createEvent('Event');
+    evt.initEvent('MOD_zeroClock', true, false);
+    document.dispatchEvent(evt);
+EOF
+"Attach file
+map -js zf <<EOF
+    var evt = document.createEvent('Event');
+    evt.initEvent('MOD_quickAttach', true, false);
+    document.dispatchEvent(evt);
+EOF
