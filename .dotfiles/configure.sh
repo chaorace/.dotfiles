@@ -5,7 +5,7 @@ chmod +x "$HOME/.config/sxhkd/sxhkdrc"
 
 #Install packages, assumes Arch environment
 sudo pacman -S --needed --noconfirm yay
-yay -S --needed --noconfirm emacs open-dyslexic-fonts ttf-iosevka-etoile firefox firefox-tridactyl-native shadowfox-updater firefox-tridactyl-git isync fdm notmuch afew mu ffcast scrot devmon pandoc languagetool aspell-en rclone lpass plantuml basilisk-bin
+yay -S --needed --noconfirm emacs open-dyslexic-fonts ttf-iosevka-etoile firefox firefox-tridactyl-native shadowfox-updater firefox-tridactyl-git isync fdm notmuch afew mu ffcast scrot devmon pandoc languagetool aspell-en rclone lpass plantuml qutebrowser
 
 #Fix permissions on fdm config so that it actually works
 chmod 640 .fdm.conf
@@ -37,7 +37,3 @@ fc-cache
 
 #Run shadowfox updater
 shadowfox-updater -generate-uuids -set-dark-theme
-
-#Cycle firefox once (applies GUI changes from tridactyl)
-firefox &
-sleep 10 && killall firefox
