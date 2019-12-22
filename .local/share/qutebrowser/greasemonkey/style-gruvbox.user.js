@@ -116,6 +116,8 @@
                 .text-gray-dark {
                   color: #83a598 !important;
                 }
+                .bg-gray,
+                .bg-gray-light,
                 .bg-white {
                   background-color: #282828 !important;
                 }
@@ -203,6 +205,7 @@
                   background-color: #3c3836 !important;
                   color: #8ec07c !important;
                 }
+                .gh-header-shadow,
                 .gh-header {
                   background-color: #282828 !important;
                 }
@@ -416,6 +419,8 @@
                   background-color: #403c3a !important;
                   color: #8ec07c !important;
                 }
+                .js-write-tab,
+                .js-preview-tab,
                 .js-select-menu-tab {
                   background-color: #44403e !important;
                   color: #8ec07c !important;
@@ -672,6 +677,7 @@
                 .pagehead-tabs-item:visited {
                   color: #83a598 !important;
                 }
+                button[aria-selected=true],
                 .reponav-item.selected,
                 .pagehead-tabs-item.selected {
                   background-color: #282828 !important;
@@ -1043,6 +1049,7 @@
                 .Box {
                   background-color: #282828 !important;
                 }
+                .Box-body,
                 .Box-header {
                   background-color: #3c3836 !important;
                 }
