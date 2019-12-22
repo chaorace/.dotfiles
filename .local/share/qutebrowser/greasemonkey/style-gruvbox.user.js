@@ -5,6 +5,7 @@
 // @match *://*.duckduckgo.com/*
 // @match *://*.google.com/*
 // @match *://*.github.com/*
+// @match *://*.wikipedia.org/*
 // @match *://*.stackexchange.com/*
 // @match *://*.stackoverflow.com/*
 // @match *://*.askubuntu.com/*

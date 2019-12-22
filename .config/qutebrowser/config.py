@@ -76,6 +76,7 @@ globaldarkBlacklist = [
     'reddit.com',
     'news.ycombinator.com',
     'github.com',
+    'wikipedia.org',
     'stackexchange.com',
     'stackoverflow.com',
     'askubuntu.com',
