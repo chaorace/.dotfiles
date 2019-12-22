@@ -232,7 +232,6 @@
 // @resource material.css https://code.getmdl.io/1.3.0/material.indigo-pink.min.css
 // @resource materialFont.css https://fonts.googleapis.com/icon?family=Material+Icons
 // @resource material.js https://greasyfork.org/scripts/377924-material-design-lite-mal-sync/code/material-design-lite%20MAL-Sync.js?version=671593
-// @run-at document-end
 // @connect myanimelist.net
 // @connect kissanimelist.firebaseio.com
 // @connect graphql.anilist.co
