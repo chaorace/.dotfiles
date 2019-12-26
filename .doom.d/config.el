@@ -4,8 +4,14 @@
 (frames-only-mode)
 (atomic-chrome-start-server)
 
-;; Global editor behavior
+;; Word Wrap
 (+global-word-wrap-mode +1)
+(add-to-list '+word-wrap-disabled-modes 'notmuch-tree-mode)
+;;Wrap is already handled by mu4e view
+(add-to-list '+word-wrap-disabled-modes 'mu4e-view-mode)
+
+;; Disable autofill
+(remove-hook 'text-mode-hook #'auto-fill-mode)
 
 ;;Fixes
 (setq langtool-java-classpath "/usr/share/languagetool:/usr/share/java/languagetool/*")
