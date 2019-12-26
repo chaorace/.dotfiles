@@ -1,0 +1,27 @@
+[Default Applications]
+text/html=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/http=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/https=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/ftp=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/about=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/unknown=org.qutebrowser.qutebrowser.desktop
+application/x-extension-htm=org.qutebrowser.qutebrowser.desktop
+application/x-extension-html=org.qutebrowser.qutebrowser.desktop
+application/x-extension-shtml=org.qutebrowser.qutebrowser.desktop
+application/xhtml+xml=org.qutebrowser.qutebrowser.desktop
+application/x-extension-xhtml=org.qutebrowser.qutebrowser.desktop
+application/x-extension-xht=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/chrome=firefox.desktop
+
+[Added Associations]
+image/jpeg=viewnior.desktop;gpicview.desktop;
+image/png=viewnior.desktop;gpicview.desktop;
+text/plain=emacs.desktop;mousepad.desktop;
+application/pdf=epdfview.desktop;
+application/x-bittorrent=transmission-gtk.desktop;
+text/csv=emacs.desktop;
+application/x-troff-man=xarchiver.desktop;
+text/x-python=emacs.desktop;
+application/octet-stream=emacs.desktop;
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=emacs.desktop;
+application/vnd.lotus-organizer=emacs.desktop;firefox.desktop;

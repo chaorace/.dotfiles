@@ -29,8 +29,9 @@ localectl set-x11-keymap us "" "" caps:super
 git clone -b develop https://github.com/hlissner/doom-emacs "$HOME/.emacs.d"
 "$HOME/.emacs.d/bin/doom" refresh
 
-#Cache protocol handlers, assumes gnomish environment
-update-desktop-database "$HOME/.local/share/applications/"
+#Update protocol handlers, assumes gnomish environment
+sudo ln -f -s "$HOME/.config/mimeapps.list" "$HOME/.local/share/applications/mimeapps.list"
+update-desktop-database
 
 #Recache Fonts
 fc-cache
