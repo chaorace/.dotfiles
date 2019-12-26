@@ -49,6 +49,7 @@ config.bind('gm', 'spawn --userscript view_in_mpv')
 
 # Browser Behavior
 c.content.notifications = False
+c.new_instance_open_target = 'window'
 
 # Ad Blocking
 c.content.host_blocking.lists.extend([
