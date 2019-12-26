@@ -26,7 +26,7 @@ super + {_, shift + } t
 super + {_, shift +} x
 	bspc node {--close, --kill}
 
-super + Tab
+super + apostrophe
 	auto-presel
 
 super + d
