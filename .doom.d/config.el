@@ -332,6 +332,14 @@
           (defun shell-native-completion ()
             (push 'company-native-complete company-backends)))
 
+(def-package! comint-intercept
+  :init
+  (add-hook 'shell-mode-hook 'comint-intercept-mode)
+  :config
+  (setq comint-intercept-prompt-regexp shell-prompt-pattern)
+  (setq comint-intercept-term-commands
+        '("top" "less" "vim")))
+
 ;;Elfeed
 (after! elfeed
   (setq elfeed-search-filter "@2-week-ago -youtube")
