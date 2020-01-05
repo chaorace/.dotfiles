@@ -5,8 +5,7 @@ chmod +x "$HOME/.config/sxhkd/sxhkdrc"
 
 #Install packages, assumes Arch environment
 sudo pacman -S --needed --noconfirm yay
-yay -S --needed --noconfirm emacs open-dyslexic-fonts ttf-iosevka-etoile firefox firefox-tridactyl-native shadowfox-updater firefox-tridactyl-git isync fdm notmuch afew mu ffcast scrot devmon pandoc languagetool aspell-en rclone lpass plantuml qutebrowser python-pip
-sudo pip install tldextract
+yay -S --needed --noconfirm emacs open-dyslexic-fonts ttf-iosevka-etoile firefox firefox-tridactyl-native shadowfox-updater firefox-tridactyl-git isync fdm notmuch afew mu ffcast scrot devmon pandoc languagetool aspell-en rclone lpass plantuml qutebrowser python-pip bash-completion
 
 #Fix permissions on fdm config so that it actually works
 chmod 640 .fdm.conf
@@ -36,6 +35,9 @@ update-desktop-database
 
 #Recache Fonts
 fc-cache
+
+#Download Qute dictionaries
+/usr/share/qutebrowser/scripts/dictcli.py install en-US
 
 #Run shadowfox updater
 shadowfox-updater -generate-uuids -set-dark-theme
