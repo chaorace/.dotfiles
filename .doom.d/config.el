@@ -316,6 +316,8 @@
 
 (setq org-image-actual-width 400)
 
+(setq shell-prompt-pattern "^[^#$%>λ\n]*[#$%>λ] *")
+(setq comint-prompt-read-only 't)
 (setenv "PAGER" "cat")
 (setq comint-output-filter-functions
       (remove 'ansi-color-process-output comint-output-filter-functions))
@@ -324,13 +326,12 @@
           (defun shell-colors-fix ()
             (add-hook 'comint-preoutput-filter-functions 'xterm-color-filter nil t)))
 
-(load! "packages/native-complete.el")
-(setq shell-prompt-pattern "^[^#$%>λ\n]*[#$%>λ] *")
-(setq comint-prompt-read-only 't)
-(native-complete-setup-bash)
-(add-hook 'shell-mode-hook
-          (defun shell-native-completion ()
-            (push 'company-native-complete company-backends)))
+(def-package! native-complete
+  :config
+  (native-complete-setup-bash)
+  (add-hook 'shell-mode-hook
+            (defun shell-native-completion ()
+              (push 'company-native-complete company-backends))))
 
 (def-package! comint-intercept
   :init
