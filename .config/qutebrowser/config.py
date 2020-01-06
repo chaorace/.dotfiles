@@ -35,6 +35,9 @@ config.bind('b', 'set-cmd-text --space :buffer')
 config.bind('>', 'tab-move +')
 config.bind('<', 'tab-move -')
 
+# Org Capture
+config.bind('cw', "open javascript:location.href='org-protocol://capture-eww-readable?template=w&url=' + encodeURIComponent(location.href) + '&title=' + encodeURIComponent(document.title || '[untitled page]');")
+
 # Editor
 c.editor.command = ["emacsclient", "-c", "+{line}:{column}", "{file}"]
 config.bind('<Ctrl-I>', "hint inputs userscript hintToEditor.py")
