@@ -31,6 +31,7 @@ config.bind('x', 'tab-close')
 config.bind('X', 'undo')
 config.bind('d', 'run-with-count 5 scroll down')
 config.bind('u', 'run-with-count 5 scroll up')
+config.bind('b', 'set-cmd-text --space :buffer')
 config.bind('>', 'tab-move +')
 config.bind('<', 'tab-move -')
 
