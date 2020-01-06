@@ -36,6 +36,8 @@ config.bind('<', 'tab-move -')
 
 # Editor
 c.editor.command = ["emacsclient", "-c", "+{line}:{column}", "{file}"]
+config.bind('<Ctrl-I>', "hint inputs userscript hintToEditor.py")
+config.bind('<Ctrl-I>', 'open-editor', mode="insert")
 
 # Password Manager
 config.bind(';l', 'spawn --userscript qute-lastpass')
