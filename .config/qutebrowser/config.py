@@ -21,7 +21,6 @@ c.aliases['!'] = 'spawn --output'
 c.aliases['source'] = 'config-source --clear;;greasemonkey-reload'
 c.aliases['help!'] = 'help'
 c.aliases['help'] = 'help --tab'
-c.aliases['open'] = 'open --secure'
 c.aliases['nope'] = 'open --private'
 
 # Navigation Bindings
