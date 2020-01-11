@@ -91,7 +91,8 @@ globaldarkBlacklist = [
     'userstyles.org',
     'twist.moe',
     'youtube.com',
-    'dev.to'
+    'dev.to',
+    'youneedabudget.com'
 ]
 
 # A dubious trick for smuggling persistent blacklist settings into Greasemonkey storage
